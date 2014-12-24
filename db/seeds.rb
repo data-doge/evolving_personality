@@ -49,6 +49,9 @@ questions = [
 	{ uid: 48, prompt: "Which word in each pair appeals to you more?", choice_a: "Hard", choice_b: "Soft", result_a: "T2", result_b: "F0"}	
 ]
 
+User.destroy_all
+Question.destroy_all
+
 questions.each do |question|
 	Question.create(question)
 end
