@@ -49,9 +49,28 @@ questions = [
 	{ uid: 48, prompt: "Which word in each pair appeals to you more?", choice_a: "Hard", choice_b: "Soft", result_a: "T2", result_b: "F0"}	
 ]
 
+types = [
+	{ name: "INTJ", url: "http://www.16personalities.com/intj-personality"},
+	{ name: "INTP", url: "http://www.16personalities.com/intp-personality"},
+	{ name: "ENTJ", url: "http://www.16personalities.com/entj-personality"},
+	{ name: "ENTP", url: "http://www.16personalities.com/entp-personality"},
+	{ name: "INFJ", url: "http://www.16personalities.com/infj-personality"},
+	{ name: "INFP", url: "http://www.16personalities.com/infp-personality"},
+	{ name: "ENFJ", url: "http://www.16personalities.com/enfj-personality"},
+	{ name: "ENFP", url: "http://www.16personalities.com/enfp-personality"},
+	{ name: "ISTJ", url: "http://www.16personalities.com/istj-personality"},
+	{ name: "ISFJ", url: "http://www.16personalities.com/isfj-personality"},
+	{ name: "ESTJ", url: "http://www.16personalities.com/estj-personality"},
+	{ name: "ESFJ", url: "http://www.16personalities.com/esfj-personality"},
+	{ name: "ISTP", url: "http://www.16personalities.com/istp-personality"},
+	{ name: "ISFP", url: "http://www.16personalities.com/isfp-personality"},
+	{ name: "ESTP", url: "http://www.16personalities.com/estp-personality"},
+	{ name: "ESFP", url: "http://www.16personalities.com/esfp-personality"}
+]
+
 User.destroy_all
+Type.destroy_all
 Question.destroy_all
 
-questions.each do |question|
-	Question.create(question)
-end
+types.each { |type| Type.create(type) }
+questions.each { |question| Question.create(question) }
