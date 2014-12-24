@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141224090648) do
+ActiveRecord::Schema.define(version: 20141224092751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +35,10 @@ ActiveRecord::Schema.define(version: 20141224090648) do
     t.integer  "JP"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "type_id"
   end
+
+  add_index "records", ["type_id"], name: "index_records_on_type_id", using: :btree
 
   create_table "types", force: true do |t|
     t.string   "name"
@@ -58,11 +61,9 @@ ActiveRecord::Schema.define(version: 20141224090648) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "binary_string",          default: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-    t.integer  "type_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  add_index "users", ["type_id"], name: "index_users_on_type_id", using: :btree
 
 end
