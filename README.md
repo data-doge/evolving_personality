@@ -34,7 +34,7 @@ new_user_registration | get '/users/sign_up' | devise/registrations#new
 Necessary Controller Actions:
 - Pages
 	- get home
-		- redirects to signin page if no session
+		- redirects to signin page if no session 
 		- otherwise checks if questionnaire complete
 		- if yes, 
 			- redirects to questionnaire
@@ -48,7 +48,8 @@ Necessary Controller Actions:
 
 - Users
 	- patch binary_string
-		- replaces five random spots in user's binary string with x's
+		- replaces five random questions in user's binary string with x
+		-	updates binary string for current user, using params from patch request
 		- redirects to questionnaire
 
 - Records
@@ -56,26 +57,31 @@ Necessary Controller Actions:
 		- takes data hash, containing question ids and numbers
 		- updates user's binary string with that data hash
 
-
 Necessary Models:
-- User
+- Users
 	- formatted_records
 		- returns the users formatted records, newest to oldest, in the following format [ {EI: 4, SN: -2, TF: 3, JP: -5, type_name: "ENTP", type_url: "BLAHBLAHBLAH", created_at: blahblhablah }, ... ]
 	- questionnaire_complete?
 		- returns true if no x's in binary string 
 		- returns false if x's in binary string.
-	- forget_five_random_answers
-		- replaces 5 random spots in users' binary string with x's
-	- update_binary_string(array_of_hashes)
+	- remove_bytes(number)
+		-replaces specififed number of random bytes with an x
+	- incompleted_bytes
+		-returns indices of incompleted bytes in user's binary string
+	- update_binary_string({id: 24, answer: 4},...,...)
 		- for each hash in the array, takes the question's id and answer, and updates the user's binary string with it.
+	- log_new_record
+		- takes current binary string, and creates a new record with specified EI, SN, TF, JP, and type_name, type_url
 
 - Record
+	- def initialize, gets EI, SN, TF, and JP, and with that makes type name and type url from association with record.
 	- to_hash
 		- returns a hash for the record in the following format {EI: 4, SN: -2, TF: 3, JP: -5, type_name: "ENTP", type_url: "BLAHBLAHBLAH", created_at: blahblhablah }
 
-- Updater
-	- 
-
-- Types
+- Questionnaire
+	- get_scores_from(binary_string)
+		- takes a binary string, and converts it to a json hash, containing EI, SN, TF, JP, type_name, type_url"
 
 - Question
+	- return_score
+		- takes 
