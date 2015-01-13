@@ -9,7 +9,7 @@ questions = [
 	{ uid: 7, prompt: "When you have a special job to do, you like to...", choice_a: "Organize it carefully before you start", choice_b: "Find out what is necessary as you go along", result_a: "J1", result_b: "P2"},
 	{ uid: 8, prompt: "You tend to have...", choice_a: "Broad friendships with many different people", choice_b: "Deep friendships with a few people", result_a: "E2", result_b: "I1"},
 	{ uid: 9, prompt: "You admire people who are", choice_a: "Conventional enough never to make themselves conspicuous", choice_b: "Too original and individual to care whether they are conspicuous or not", result_a: "S1", result_b: "N2"},
-	{ uid: 10, prompt: "You prefer to...", choice_a: "Arrange picnics, parties, etc. well in advance", choice_b: "Be free to do whatever looks like fun when the time comes", result_a: "J2", result_b: "P1"}
+	{ uid: 10, prompt: "You prefer to...", choice_a: "Arrange picnics, parties, etc. well in advance", choice_b: "Be free to do whatever looks like fun when the time comes", result_a: "J2", result_b: "P1"},
 	{ uid: 11, prompt: "You usually get along better with...", choice_a: "Realistic people", choice_b: "Imaginative people", result_a: "S1", result_b: "N2"},
 	{ uid: 12, prompt: "When you are with a group of people, you would rather...", choice_a: "Join in the talk of the group", choice_b: "Sit back and mostly listen", result_a: "E1", result_b: "I2"},
 	{ uid: 13, prompt: "It is a higher compliment to be called...", choice_a: "A person of real feeling", choice_b: "A consistently reasonable person", result_a: "F1", result_b: "T2"},

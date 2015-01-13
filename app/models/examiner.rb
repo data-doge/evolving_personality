@@ -1,5 +1,7 @@
 class Examiner
 
+	attr_reader :user
+
 	def self.prepare_for(user)
 		examiner = new(user)
 		examiner.examine!

@@ -13,23 +13,22 @@ RSpec.describe Examiner, :type => :model do
 
 	load Rails.root + "db/seeds.rb" 
 
-	describe "#self.prepare_for(user)" do 
+	# describe "#self.prepare_for(user)" do 
 
-		it "creates a new instance of the examiner model with user as an initializer" do 
-			# user = User.create(email: Faker::Internet.email, password: "password")
-			# Examiner.prepare_for(user)
-			# expect(User.all.length).to eq(1)
-		end 
+	# 	it "creates a new instance of the examiner model with user as an initializer" do 
+	# 	end 
 
-		it "calls the examine! method on this new instance" do 
-		end 
+	# 	it "calls the examine! method on this new instance" do 
+	# 	end 
 
-	end 
+	# end 
 	
 	describe "#initialize(user)" do 
 
 		it "saves inputted user and an instance variable called @user" do 
-
+			user = User.create(email: Faker::Internet.email, password: "password")
+			examiner = Examiner.new(user)
+			expect(examiner.user).to eq(user)
 		end 
 
 	end 
