@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :records, dependent: :destroy
 
   def binary_array
-		binary_string.split('').map { |byte| byte.to_i }.map { |byte| (byte - 4) }
+		binary_string.split('').map { |char| char == "x" ? 4 : char.to_i }.map { |byte| (byte - 4) }
   end 
 
 end

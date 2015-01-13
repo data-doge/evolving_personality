@@ -1,0 +1,33 @@
+Let's imagine that you are working with a team of developers on a social networking app. Everyone is working on a different part of the application. This is your first day with this team, and today you'll starting an instant messaging feature for the app. Here's what you might do: 
+
+- First you want to take a copy of your project's online github repository and save it to your computer so you can start working on your feature.
+
+	git clone https://github.com/some_company/some_social_networking_app.git
+		this copies the github repo to your computer
+
+- Now, you don't want to just start editing the master branch of the repo you just cloned. That would be risky. The master branch is only for code which is completed and tested. Instead, you'll create a new branch, and you'll call it "instant_messaging"
+
+	git checkout -b "instant_messaging"
+		this adds a new branch called "instant_messaging" to the repo, and then moves you onto that branch.
+
+- Great, when you're done with your feature, and everything works and is tested, you will merge your branch into master. Until then, you'll make small additions and modifications and save your changes very, very often -- each time with a nice descriptive comment. So... after adding and editing a few files, you decide that now's a good time to save your progress. First you'll add these files to the "stage."
+
+	git add .
+		this "stages" all the files in your current working directory. 
+
+- After staging these files, you are now able to save them to your computer, and have them be a part of your git history forever. Before saving though, you want to make absolutely sure that the files have been staged. You are a little paranoid.
+
+	git status
+		this gives you a little print out showing the branch you're on, staged/unstaged files, etc.
+
+- Ok, you see that your files have been added. Now you want to save them along with a nice message
+	
+	git commit -m "this is a comment which accurately and concisely explains the changes I've made"
+		this saves all staged files, along with a message describing your changes
+
+- And now you're off to lunch. But before leaving, you want to save your local changes online. This way, everyone else on the team can see what you've been working on. Also, in case your computer explodes during lunch, you'd like a copy of your work saved elsewhere. You are a little paranoid. 
+
+	git push origin instant_messaging
+		this saves your local changes to the instant_messaging branch on your project's online github repo.
+
+- As you get up to leave, your computer explodes. You are not paranoid. You are practical. Your loss saddens you, but github eases the pain. Thank you github.

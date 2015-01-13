@@ -9,7 +9,7 @@ questions = [
 	{ uid: 7, prompt: "When you have a special job to do, you like to...", choice_a: "Organize it carefully before you start", choice_b: "Find out what is necessary as you go along", result_a: "J1", result_b: "P2"},
 	{ uid: 8, prompt: "You tend to have...", choice_a: "Broad friendships with many different people", choice_b: "Deep friendships with a few people", result_a: "E2", result_b: "I1"},
 	{ uid: 9, prompt: "You admire people who are", choice_a: "Conventional enough never to make themselves conspicuous", choice_b: "Too original and individual to care whether they are conspicuous or not", result_a: "S1", result_b: "N2"},
-	{ uid: 10, prompt: "You prefer to...", choice_a: "Arrange picnics, parties, etc. well in advance", choice_b: "Be free to do whatever looks like fun when the time comes", result_a: "J2", result_b: "P1"},
+	{ uid: 10, prompt: "You prefer to...", choice_a: "Arrange picnics, parties, etc. well in advance", choice_b: "Be free to do whatever looks like fun when the time comes", result_a: "J2", result_b: "P1"}
 	{ uid: 11, prompt: "You usually get along better with...", choice_a: "Realistic people", choice_b: "Imaginative people", result_a: "S1", result_b: "N2"},
 	{ uid: 12, prompt: "When you are with a group of people, you would rather...", choice_a: "Join in the talk of the group", choice_b: "Sit back and mostly listen", result_a: "E1", result_b: "I2"},
 	{ uid: 13, prompt: "It is a higher compliment to be called...", choice_a: "A person of real feeling", choice_b: "A consistently reasonable person", result_a: "F1", result_b: "T2"},
@@ -38,7 +38,7 @@ questions = [
 	{ uid: 36, prompt: "Which word in each pair appeals to you more?", choice_a: "Determined", choice_b: "Devoted", result_a: "T1", result_b: "F1"},
 	{ uid: 37, prompt: "Which word in each pair appeals to you more?", choice_a: "Gentle", choice_b: "Firm", result_a: "F1", result_b: "T2"},
 	{ uid: 38, prompt: "Which word in each pair appeals to you more?", choice_a: "Systematic", choice_b: "Casual", result_a: "J2", result_b: "P2"},
-	{ uid: 39, prompt: "Which word in each pair appeals to you more?", choice_a: "Certainty", choice_b: "Theory", result_a: "S1", result_b: "N2"},
+	{ uid: 39, prompt: "Which word in each pair appeals to you more?", choice_a: "Certainty", choice_b: "Theory", result_a: "S1", result_b: "N2"},	
 	{ uid: 40, prompt: "Which word in each pair appeals to you more?", choice_a: "Calm", choice_b: "Lively", result_a: "I1", result_b: "E1"},
 	{ uid: 41, prompt: "Which word in each pair appeals to you more?", choice_a: "Justice", choice_b: "Mercy", result_a: "T1", result_b: "F2"},
 	{ uid: 42, prompt: "Which word in each pair appeals to you more?", choice_a: "Fascinating", choice_b: "Sensible", result_a: "N0", result_b: "S2"},
@@ -46,7 +46,7 @@ questions = [
 	{ uid: 44, prompt: "Which word in each pair appeals to you more?", choice_a: "Feeling", choice_b: "Thinking", result_a: "F1", result_b: "T2"},
 	{ uid: 45, prompt: "Which word in each pair appeals to you more?", choice_a: "Literal", choice_b: "Figurative", result_a: "S1", result_b: "N1"},
 	{ uid: 46, prompt: "Which word in each pair appeals to you more?", choice_a: "Foresight", choice_b: "Compassion", result_a: "T2", result_b: "F1"},
-	{ uid: 47, prompt: "Which word in each pair appeals to you more?", choice_a: "Hard", choice_b: "Soft", result_a: "T2", result_b: "F0"}	
+	{ uid: 47, prompt: "Which word in each pair appeals to you more?", choice_a: "Hard", choice_b: "Soft", result_a: "T2", result_b: "F0"}
 ]
 
 types = [
@@ -74,3 +74,5 @@ Question.destroy_all
 
 types.each { |type| Type.create(type) }
 questions.each { |question| Question.create(question) }
+
+# user = User.create(email: "eugenestapler@gmail.com", password: "password", binary_string: "123456745362711234567453627112345674536271111111")

@@ -6,23 +6,23 @@ class Examiner
 	end 
 
 	def initialize(user)
-		@user = user 
+		@user = user
 	end
 
 	def examine!
 		record = @user.records.create
 		binary_array = @user.binary_array
-		binary_array.each_with_index do |byte, uid|
-			result = translate(byte,uid)
-			update_record!(result)
+		binary_array.each_with_index do |bit, uid|
+			result = translate(bit,uid)
+			update_record!(result, record)
 		end
 	end
 
-	def translate(byte,uid)
-		if question = Question.find(uid: uid)
+	def translate(bit,uid)
+		if question = Question.find_by(uid: uid)
 			case 
-				when byte < 0 then { type: question.result_a[0], score: (question.result_a[1].to_i * byte).abs }
-				when byte > 0 then { type: question.result_b[0], score: (question.result_b[1].to_i * byte).abs }
+				when bit < 0 then { type: question.result_a[0], score: (question.result_a[1].to_i * bit).abs }
+				when bit > 0 then { type: question.result_b[0], score: (question.result_b[1].to_i * bit).abs }
 				else nil
 			end 
 		else 
@@ -30,7 +30,7 @@ class Examiner
 		end 
 	end
 
-	def update_record!(result)
+	def update_record!(result, record)
 		unless result.nil?
 			case result[:type]
 				when "E" then record.EI += result[:score] 

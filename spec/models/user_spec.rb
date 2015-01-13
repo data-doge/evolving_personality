@@ -12,13 +12,11 @@ RSpec.describe User, :type => :model do
 			expect(user.binary_array).to eq([-3,-2,-1,0,1,2,3,0,1,-1,2,-2,3,-3])
 		end 
 
-		it "if any x's in the user's binary_string, maps it value to nil" do 
+		it "if any x's in the user's binary_string, maps it value to 0" do 
 			user.update(binary_string: "123456x45362x1")
+			expect(user.binary_array).to eq([-3,-2,-1,0,1,2,0,0,1,-1,2,-2,0,-3])
 		end 
 
 	end 
-
-
-
 
 end
