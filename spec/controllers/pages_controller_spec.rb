@@ -10,12 +10,12 @@ RSpec.describe PagesController, :type => :controller do
 			login_user
 			before { get :home }
 
-			it "returns http status 302" do 
-				expect(response).to have_http_status(302)
+			it "returns http status of ok" do 
+				expect(response).to have_http_status(:ok)
 			end 
 
-			it "redirects home" do 
-				expect(response).to redirect_to("/home")
+			it "renders home" do 
+				expect(response).to render_template(:home)
 			end
 
 		end 
