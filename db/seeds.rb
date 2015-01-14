@@ -74,5 +74,3 @@ Question.destroy_all
 
 types.each { |type| Type.create(type) }
 questions.each { |question| Question.create(question) }
-
-# user = User.create(email: "eugenestapler@gmail.com", password: "password", binary_string: "123456745362711234567453627112345674536271111111")
