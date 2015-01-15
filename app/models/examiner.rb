@@ -27,10 +27,8 @@ class Examiner
 				when bit > 0 then { type: question.result_b[0], score: (question.result_b[1].to_i * bit).abs }
 				else nil
 			end 
-		else 
-			nil
 		end 
 	end
-
+	
 end
 
