@@ -19,4 +19,18 @@ RSpec.describe User, :type => :model do
 
 	end 
 
+	describe "#questionnaire_complete?" do 
+
+		it "returns true if there are no x's in the user's binary string" do 
+			user = User.create(email: Faker::Internet.email, password: "password", binary_string: "154617161231237123516472626154617161231237123516")
+			expect(user.questionnaire_complete?).to be true 
+		end 
+
+		it "returns false if there are x's in the user's binary string" do 
+			user = User.create(email: Faker::Internet.email, password: "password", binary_string: "1546171612312371235164726261xx617161231237123516")
+			expect(user.questionnaire_complete?).to be false
+		end
+
+	end 
+
 end

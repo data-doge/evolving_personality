@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
 		binary_string.split('').map { |char| char == "x" ? 4 : char.to_i }.map { |byte| (byte - 4) }
   end 
 
+  def questionnaire_complete?
+  	!binary_string.include?("x")
+  end 
+
 end
