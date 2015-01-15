@@ -32,6 +32,8 @@ gem 'rspec-rails', '~> 3.1.0'
 
 gem 'faker'
 
+gem 'normalize-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

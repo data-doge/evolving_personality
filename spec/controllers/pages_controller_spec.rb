@@ -6,7 +6,7 @@ RSpec.describe PagesController, :type => :controller do
 	describe "#home" do 
 
 		describe "if user signed in" do 
-
+				
 			before do 
 				sign_in 
 				get :home
