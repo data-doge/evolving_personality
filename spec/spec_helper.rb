@@ -7,9 +7,6 @@ RSpec.configure do |config|
     ActiveRecord::Base.subclasses.each(&:delete_all)
   end
 
-  config.include Devise::TestHelpers, :type => :controller
-  config.extend ControllerMacros, :type => :controller
-
   config.default_formatter = 'doc'
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true

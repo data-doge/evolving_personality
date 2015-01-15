@@ -28,7 +28,7 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
-gem 'rspec-rails'
+gem 'rspec-rails', '~> 3.1.0'
 
 gem 'faker'
 
