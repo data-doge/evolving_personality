@@ -1,4 +1,10 @@
 <h1>Questionnaire</h1>
 
-
+<%= form_tag("/users/update", method: "patch") do %>
+	<% @questionnaire.each do |question| %>
+		<h2><%= question.uid %>. <%= question.prompt %></h2>
+		<%= range_field(:answers, question.uid, in: 1..7 )%>
+	<% end %>
+  <%= submit_tag("Search") %>
+<% end %>
 

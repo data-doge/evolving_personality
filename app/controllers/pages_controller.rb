@@ -9,6 +9,7 @@ class PagesController < ApplicationController
 	def questionnaire
 		@questionnaire = Questionnaire.create_for(current_user)
 	end
+	
 
 end
 
