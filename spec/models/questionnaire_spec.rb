@@ -26,17 +26,4 @@ RSpec.describe Question, :type => :model do
 
 	end 
 
-	# describe "#self.update_for(user)" do 
-
-	# 	it "returns an array" do 
-	# 	end 
-
-	# 	it "that array contains 5 questions" do 
-	# 	end 
-
-	# 	it "questions are unique" do 
-	# 	end 
-
-	# end
-
 end

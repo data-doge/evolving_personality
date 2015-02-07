@@ -14,4 +14,8 @@ class User < ActiveRecord::Base
   	!binary_string.include?("x")
   end 
 
+  def update_binary_string(answers)
+    #each answer will have uid and score 
+  end 
+
 end

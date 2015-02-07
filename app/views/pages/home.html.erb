@@ -1,3 +1,16 @@
-IT IS HOME
+<header>
+	<h1>HOME PAGE</h1>
+	<nav>
+		<%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+	</nav>
+</header>
 
-<%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+<section id="content">
+
+	<% if current_user.questionnaire_complete? %>
+		<%= link_to "Continue Analysis", questionnaire_path %>
+	<% else %>
+		<%= link_to "Start Analysis", questionnaire_path %>
+	<% end %>
+	
+</section>

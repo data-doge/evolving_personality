@@ -34,11 +34,9 @@ RSpec.describe PagesController, :type => :controller do
 	describe "#questionnaire" do 
 
 		before { get :questionnaire }
-
 		it { expect(response).to have_http_status(:ok) }
-		it { expect(response).to render_template(:questionnaire) }
-
-	end 
+		it { expect(response).to render_template(:questionnaire) 
+}	end 
 
 
 

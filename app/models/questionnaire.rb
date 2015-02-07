@@ -8,8 +8,4 @@ class Questionnaire
 		return questions
 	end
 
-	# def self.update_for(user)
-
-	# end
-
 end
