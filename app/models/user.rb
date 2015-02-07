@@ -14,12 +14,11 @@ class User < ActiveRecord::Base
   	!binary_string.include?("x")
   end 
 
-  def return_updated_binary_string_with(answers)
-    new_shit = binary_string
-    answers.each do |uid, score|
-      new_shit[uid.to_i] = score
-    end
-    return new_shit
+  def update_binary_string_with(answers)
+    binary_string = ""
+    update(binary_string: "")
+    answers.each { |uid, score| binary_string << score }
+    update(binary_string: binary_string) 
   end 
 
 end
