@@ -7,10 +7,6 @@
 
 <section id="content">
 
-	<% if current_user.questionnaire_complete? %>
-		<%= link_to "Continue Analysis", questionnaire_path %>
-	<% else %>
-		<%= link_to "Start Analysis", questionnaire_path %>
-	<% end %>
-	
+	<%= link_to "Start Analysis", questionnaire_path %>
+
 </section>

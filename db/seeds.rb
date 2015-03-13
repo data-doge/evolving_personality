@@ -38,7 +38,7 @@ questions = [
 	{ uid: 36, prompt: "Which word in each pair appeals to you more?", choice_a: "Determined", choice_b: "Devoted", result_a: "T1", result_b: "F1"},
 	{ uid: 37, prompt: "Which word in each pair appeals to you more?", choice_a: "Gentle", choice_b: "Firm", result_a: "F1", result_b: "T2"},
 	{ uid: 38, prompt: "Which word in each pair appeals to you more?", choice_a: "Systematic", choice_b: "Casual", result_a: "J2", result_b: "P2"},
-	{ uid: 39, prompt: "Which word in each pair appeals to you more?", choice_a: "Certainty", choice_b: "Theory", result_a: "S1", result_b: "N2"},	
+	{ uid: 39, prompt: "Which word in each pair appeals to you more?", choice_a: "Certainty", choice_b: "Theory", result_a: "S1", result_b: "N2"},
 	{ uid: 40, prompt: "Which word in each pair appeals to you more?", choice_a: "Calm", choice_b: "Lively", result_a: "I1", result_b: "E1"},
 	{ uid: 41, prompt: "Which word in each pair appeals to you more?", choice_a: "Justice", choice_b: "Mercy", result_a: "T1", result_b: "F2"},
 	{ uid: 42, prompt: "Which word in each pair appeals to you more?", choice_a: "Fascinating", choice_b: "Sensible", result_a: "N0", result_b: "S2"},
@@ -49,7 +49,7 @@ questions = [
 	{ uid: 47, prompt: "Which word in each pair appeals to you more?", choice_a: "Hard", choice_b: "Soft", result_a: "T2", result_b: "F0"}
 ]
 
-types = [
+personality_types = [
 	{ name: "INTJ", url: "http://www.16personalities.com/intj-personality"},
 	{ name: "INTP", url: "http://www.16personalities.com/intp-personality"},
 	{ name: "ENTJ", url: "http://www.16personalities.com/entj-personality"},
@@ -69,8 +69,8 @@ types = [
 ]
 
 User.destroy_all
-Type.destroy_all
+PersonalityType.destroy_all
 Question.destroy_all
 
-types.each { |type| Type.create(type) }
+personality_types.each { |type| PersonalityType.create(type) }
 questions.each { |question| Question.create(question) }

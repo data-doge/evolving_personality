@@ -5,7 +5,7 @@ class Examiner
 	def self.prepare_for(user)
 		examiner = new(user)
 		examiner.examine!
-	end 
+	end
 
 	def initialize(user)
 		@user = user
@@ -18,17 +18,18 @@ class Examiner
 			result = translate(bit,uid)
 			record.update!(result)
 		end
+		record.calculate_type!
 	end
 
 	def translate(bit,uid)
 		if question = Question.find_by(uid: uid)
-			case 
+			case
 				when bit < 0 then { type: question.result_a[0], score: (question.result_a[1].to_i * bit).abs }
 				when bit > 0 then { type: question.result_b[0], score: (question.result_b[1].to_i * bit).abs }
 				else nil
-			end 
-		end 
+			end
+		end
 	end
-	
+
 end
 
