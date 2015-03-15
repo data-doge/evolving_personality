@@ -3,5 +3,4 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get '/questionnaire', to: 'pages#questionnaire'
   patch '/users/update', to: 'users#update'
-  get '/users/history', to: 'users#history'
 end

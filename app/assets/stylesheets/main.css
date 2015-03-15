@@ -8,6 +8,7 @@ a:hover {border-bottom-color: rgba(0,0,0,0); }
 #content {text-align: center; }
 ul { list-style: none; padding: 0; }
 p { font-size: 20px; }
+h2 { margin: 0;}
 
 input[type=range] {
   -webkit-appearance: none;

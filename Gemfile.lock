@@ -50,8 +50,6 @@ GEM
     execjs (2.2.2)
     faker (1.4.3)
       i18n (~> 0.5)
-    groupdate (2.4.0)
-      activesupport (>= 3)
     hike (1.2.3)
     i18n (0.7.0)
     jbuilder (2.2.6)
@@ -148,7 +146,6 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   faker
-  groupdate
   jbuilder (~> 2.0)
   jquery-rails
   normalize-rails

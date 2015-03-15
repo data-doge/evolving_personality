@@ -10,9 +10,5 @@ class UsersController < ApplicationController
 		redirect_to "/"
 	end
 
-  def history
-    current_user.history
-  end
-
 end
 

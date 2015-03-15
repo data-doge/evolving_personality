@@ -35,7 +35,6 @@ gem 'faker'
 gem 'normalize-rails'
 
 gem 'chartkick'
-gem 'groupdate'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
