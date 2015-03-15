@@ -6,9 +6,13 @@
 </header>
 
 <section id="content">
-
 	<%= link_to "Start Analysis", questionnaire_path %>
   <% if current_user.questionnaire_complete? %>
     <p>Your current personality type is: <a href='<%= current_user.current_type.url %>'><%= current_user.current_type.name %><a/></p>
   <% end %>
 </section>
+
+<%= line_chart current_user.ei_history %>
+<%= line_chart current_user.sn_history %>
+<%= line_chart current_user.tf_history %>
+<%= line_chart current_user.jp_history %>

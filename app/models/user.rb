@@ -25,4 +25,28 @@ class User < ActiveRecord::Base
     self.records.order(created_at: :desc).first.personality_type
   end
 
+  def ei_history
+    output = {}
+    self.records.each { |record| output[record.created_at] = record.EI }
+    output
+  end
+
+  def sn_history
+    output = {}
+    self.records.each { |record| output[record.created_at] = record.SN }
+    output
+  end
+
+  def tf_history
+    output = {}
+    self.records.each { |record| output[record.created_at] = record.TF }
+    output
+  end
+
+  def jp_history
+    output = {}
+    self.records.each { |record| output[record.created_at] = record.JP }
+    output
+  end
+
 end
