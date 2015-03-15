@@ -3,7 +3,7 @@
 <%= form_tag("/users/update", method: "patch") do %>
 	<% @questionnaire.each do |question| %>
 		<h2><%= question.uid %>. <%= question.prompt %></h2>
-		<%= range_field(:answers, question.uid, in: 1..7 )%>
+		<p><%=question.choice_a%></p><%= range_field(:answers, question.uid, in: 1..7 )%><p><%=question.choice_b%></p>
 	<% end %>
-  <%= submit_tag("Search") %>
+  <%= submit_tag("Submit!") %>
 <% end %>
