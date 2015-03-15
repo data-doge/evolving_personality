@@ -14,6 +14,7 @@
     <%= line_chart current_user.tf_history, {library: {hAxis: {title: "(+) thinking / (-) feeling"} } } %>
     <%= line_chart current_user.jp_history, {library: {hAxis: {title: "(+) judging / (-) perceiving"} } } %>
   <% else %>
+    <p id='info'>Welcome to Evolving Personality Alpha. This application graphs the evolution of your personality over time. To start, click "Start Analysis" and answer 48 questions about yourself. It's kinda long, I know, but you only have to do this once. Your answers will be used to determine your Myers-Briggs personality type, and four new points will appear on four new graphs on your front page. Everytime you revisit this site, you'll have the opportunity to answer 10 quick questions, and update these graphs. Have fun tracking the changes in your personality!</p>
   	<%= link_to "Start Analysis", questionnaire_path %>
   <% end %>
 
