@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141229213402) do
+ActiveRecord::Schema.define(version: 20150313231958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "personality_types", force: true do |t|
+    t.integer  "record_id"
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "questions", force: true do |t|
     t.integer  "uid"
@@ -33,16 +41,6 @@ ActiveRecord::Schema.define(version: 20141229213402) do
     t.integer  "SN",         default: 0
     t.integer  "TF",         default: 0
     t.integer  "JP",         default: 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "type_id"
-  end
-
-  add_index "records", ["type_id"], name: "index_records_on_type_id", using: :btree
-
-  create_table "types", force: true do |t|
-    t.string   "name"
-    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

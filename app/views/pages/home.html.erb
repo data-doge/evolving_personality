@@ -1,0 +1,20 @@
+<header>
+	<h1>HOME PAGE</h1>
+	<nav>
+		<%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+	</nav>
+</header>
+
+<section id="content">
+	<%= link_to "Start Analysis", questionnaire_path %>
+  <% if current_user.questionnaire_complete? %>
+    <p>Your current personality type is: <a href='<%= current_user.current_type.url %>'><%= current_user.current_type.name %></a></p>
+    <%= line_chart current_user.ei_history, {library: {hAxis: {title: "(+) extraversion / (-) introversion"} } } %>
+    <%= line_chart current_user.sn_history, {library: {hAxis: {title: "(+) sensing / (-) intuition"} } } %>
+    <%= line_chart current_user.tf_history, {library: {hAxis: {title: "(+) thinking / (-) feeling"} } } %>
+    <%= line_chart current_user.jp_history, {library: {hAxis: {title: "(+) judging / (-) perceiving"} } } %>
+  <% end %>
+
+
+</section>
+
