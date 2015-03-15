@@ -7,7 +7,11 @@ class PagesController < ApplicationController
 	end
 
 	def questionnaire
-		@questionnaire = Questionnaire.create_full_for(current_user)
+    if current_user.questionnaire_complete?
+      @questionnaire = Questionnaire.create_partial_for(current_user)
+    else
+  		@questionnaire = Questionnaire.create_full_for(current_user)
+    end
 	end
 
 end

@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   end
 
   def questionnaire_complete?
-  	!binary_string.include?("x")
+  	self.records.length > 0
   end
 
   def update_binary_string_with(answers)

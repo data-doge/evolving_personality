@@ -4,4 +4,8 @@ class Questionnaire
     Question.all
 	end
 
+  def self.create_partial_for(user)
+    Question.all.shuffle.first(10)
+  end
+
 end
